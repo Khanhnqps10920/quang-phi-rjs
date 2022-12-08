@@ -1,0 +1,53 @@
+@keyframes spin {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .spinner {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1003;
+    background: #000000;
+    overflow: hidden;
+  }
+  .spinner div:first-child {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    box-shadow: 0 .3rem .3rem 0 rgba(255, 56, 106, 1);
+    transform: translate3d(0, 0, 0);
+    animation: spin 2s linear infinite;
+  }
+  .spinner div:first-child:after,
+  .spinner div:first-child:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  .spinner div:first-child:before {
+    top: .5rem;
+    left: .5rem;
+    right: .5rem;
+    bottom: .5rem;
+    box-shadow: 0 .3rem .3rem 0 rgb(255, 228, 32);
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+  }
+  .spinner div:first-child:after {
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    box-shadow: 0 3px 3px 0 rgba(61, 175, 255, 1);
+    animation: spin 1.5s linear infinite;
+  }

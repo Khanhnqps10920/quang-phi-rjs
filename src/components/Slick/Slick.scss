@@ -1,0 +1,25 @@
+.slick-list{
+    margin: {
+        left: -2rem;
+        right: -2rem;
+    }
+    .product{
+        padding: 2rem;
+        position: relative;
+        .product-info{
+            position: absolute;
+            left: 3rem;
+            bottom: 3rem;
+            .product-price{
+                display: flex;
+                align-items: center;
+                .old-price{
+                    color: #333;
+                    font-size: 1.4rem;
+                    margin-right: .8rem;
+                    text-decoration: line-through;
+                }
+            }
+        }
+      }
+}

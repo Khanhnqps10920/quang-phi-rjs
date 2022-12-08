@@ -1,0 +1,606 @@
+/* CSS */
+@mixin flexVScenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin fullWidthAndHeight {
+  width: 100%;
+  height: 100%;
+}
+#index-page {
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2.5rem;
+    color: white;
+    h1 {
+      font: {
+        size: 4rem;
+        weight: 700;
+      }
+      letter-spacing: 0.1rem;
+    }
+  }
+  .product {
+    width: 100%;
+    .product-img {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .product-info {
+      padding-top: 2rem;
+      font-weight: 500;
+      .product-categories {
+        display: none;
+      }
+      .product-name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .product-price {
+        color: red;
+        font-size: 1.8rem;
+      }
+    }
+  }
+  #banner {
+    position: relative;
+    height: 100rem;
+    @include flexVScenter;
+    &::before {
+      content: "2022";
+      display: flex;
+      position: absolute;
+      font-size: 30rem;
+      line-height: 30rem;
+      padding: {
+        top: 3rem;
+        left: 33rem;
+      }
+      width: 133rem;
+      transform: rotate(-90deg);
+      background: rgba(255, 255, 255, 0.2);
+      color: rgba(129, 195, 241, 0.5);
+      font-weight: 800;
+      top: 50%;
+      right: -21%;
+      z-index: 9;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      background: url(https://i.postimg.cc/k56fDh13/home-23.jpg) no-repeat;
+      background-size: cover;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: calc(100% + 33rem);
+    }
+    .banner-content {
+      color: white;
+      width: 50%;
+      display: flex;
+      position: relative;
+      z-index: 9;
+      font: {
+        size: 8rem;
+        weight: 700;
+      }
+      line-height: 9rem;
+      span {
+        display: block;
+        color: red;
+        font: {
+          size: 12rem;
+          weight: 800;
+        }
+        line-height: 13rem;
+      }
+    }
+  }
+  #main {
+    overflow: hidden;
+    .category-item {
+      position: relative;
+      @include fullWidthAndHeight;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 10;
+      img {
+        @include fullWidthAndHeight;
+        transition: 0.5s;
+      }
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+    .products-trending {
+      position: relative;
+      height: 250vh;
+      &::before {
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: calc(100% - 100vw);
+        left: 0;
+        background-image: url(https://codex-themes.com/thegem/sites/shop-creative-fashion/wp-content/uploads/2022/05/home_9.jpg);
+        background : {
+          size: cover;
+          position: top center;
+          repeat: no-repeat;
+        }
+      }
+      .header-text {
+        position: relative;
+        top: 15%;
+        h1,
+        span {
+          position: relative;
+          z-index: 10;
+          font: {
+            size: 12rem;
+            weight: 700;
+          }
+          color: white;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: red;
+          height: 250%;
+          width: 10rem;
+          left: 0;
+          top: -10%;
+        }
+      }
+      .trending-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          bottom: 0;
+          right: -50px;
+          left: calc(100% - 100vw);
+          background-color: #f9f9f9;
+        }
+        .row {
+          margin: 0 -2rem;
+        }
+        .content-wraper {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding: 8rem 0;
+          @include fullWidthAndHeight;
+          .spinner {
+            background: #f9f9f9;
+          }
+          .product {
+            padding: 0 2rem;
+          }
+        }
+      }
+      .bottom-text {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+        margin-bottom: 14rem;
+        h1,
+        span {
+          position: relative;
+          z-index: 10;
+          font: {
+            size: 12rem;
+            weight: 700;
+          }
+          color: white;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: red;
+          height: 320%;
+          width: 10rem;
+          right: 0;
+          bottom: -10%;
+          z-index: 1;
+        }
+      }
+    }
+    .products-classify {
+      .classify-item {
+        position: relative;
+        overflow: hidden;
+        transition: 0.5s;
+        @include fullWidthAndHeight;
+        img {
+          @include fullWidthAndHeight;
+          transition: 0.5s;
+          object-fit: cover;
+        }
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .products-seller {
+      background-color: #f9f9f9;
+      padding: 8rem 0;
+      .react-tabs {
+        .seller-panel {
+          @include flexVScenter;
+          justify-content: space-between;
+          margin-bottom: 5rem;
+          border-bottom: 0.1rem solid #333;
+          .title {
+            position: unset;
+            color: black;
+            padding: 0;
+          }
+          .react-tabs__tab-list {
+            display: flex;
+            margin-bottom: 0;
+            .react-tabs__tab {
+              font-size: 1.8rem;
+              padding-left: 3rem;
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                width: calc(100% - 3rem);
+                height: 0.2rem;
+                background-color: red;
+                bottom: 0;
+                display: none;
+              }
+              &.react-tabs__tab--selected {
+                color: red;
+                font-weight: 700;
+                &::before {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+      .seller-main {
+        .spinner {
+          position: unset;
+          background-color: #f9f9f9;
+          height: 75vh;
+        }
+      }
+    }
+    .custom-banner {
+      .custom-wraper {
+        .wraper-left {
+          .custom-item {
+            @include fullWidthAndHeight;
+            img {
+              @extend .custom-item;
+              object-fit: cover;
+            }
+          }
+        }
+        .wraper-right {
+          @include fullWidthAndHeight;
+          .custom-item {
+            @include fullWidthAndHeight;
+            position: relative;
+            img {
+              @extend .custom-item;
+            }
+            .custom-item-content {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+              .item-heading {
+                @include flexVScenter;
+                img {
+                  width: 12rem;
+                }
+                span {
+                  font-size: 12rem;
+                  line-height: 12rem;
+                  font-weight: 700;
+                  margin-left: 3rem;
+                  color: white;
+                }
+              }
+              .item-button {
+                margin-top: 5rem;
+                padding: 1rem 2rem;
+                background: transparent;
+                border-color: white;
+                a {
+                  font-size: 1.8rem;
+                  color: white;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .final-sale {
+      position: relative;
+      height: 80vh;
+      @include flexVScenter;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        right: calc(100% - 100vw);
+        left: 0;
+        background-image: url(https://codex-themes.com/thegem/sites/shop-creative-fashion/wp-content/uploads/2022/05/home_17_2.jpg);
+        background-size: cover;
+        background-position: left center;
+        background-repeat: no-repeat;
+      }
+      .final-sale-item {
+        position: relative;
+        z-index: 10;
+        width: 50%;
+        &.right {
+          text-align: center;
+        }
+        span {
+          display: block;
+          font-size: 12rem;
+          font-weight: 700;
+          color: white;
+        }
+        h1 {
+          font-size: 4rem;
+          color: white;
+          padding-left: 10rem;
+        }
+      }
+    }
+  }
+}
+/*  */
+
+/* REsponsive */
+@media screen and (max-width: 1400px) {
+  #index-page {
+    #main {
+      .custom-banner {
+        .custom-wraper {
+          .wraper-right {
+            .custom-item {
+              .custom-item-content {
+                .item-heading {
+                  display: flex;
+                  flex-direction: column;
+                  span {
+                    margin-top: 2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #index-page {
+    #banner {
+      height: 90rem;
+      .banner-content {
+        .banner-text {
+          font-size: 7rem;
+          span {
+            font-size: 8rem;
+          }
+        }
+      }
+    }
+    #main {
+      .products-trending {
+        height: 225vh;
+        .header-text,
+        .bottom-text {
+          h1,
+          span {
+            font: {
+              size: 10rem;
+            }
+          }
+        }
+      }
+      .custom-banner {
+        .custom-wraper {
+          .wraper-right {
+            .custom-item {
+              .custom-item-content {
+                .item-heading {
+                  img {
+                    width: 10rem;
+                  }
+                  span {
+                    font-size: 10rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .final-sale {
+        .final-sale-item {
+          span {
+            font-size: 10rem;
+          }
+          h1 {
+            font-size: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #index-page {
+    #banner {
+      &::before {
+        display: none;
+      }
+      .banner-content {
+        width: 70%;
+      }
+    }
+    #main {
+      .products-trending {
+        height: 200vh;
+      }
+      .custom-banner {
+        .custom-wraper {
+          .wraper-left {
+            .custom-item {
+              img {
+                height: 36rem;
+              }
+            }
+          }
+          .wraper-right {
+            .custom-item {
+              .custom-item-content {
+                .item-heading {
+                  span {
+                    margin-top: 0;
+                    font-size: 8rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #index-page {
+    #banner {
+      height: 70rem;
+      .banner-content {
+        width: 100%;
+
+        .banner-text {
+          font-size: 5rem;
+          line-height: 6rem;
+          span {
+            line-height: 8rem;
+            font-size: 6rem;
+          }
+        }
+      }
+    }
+    #main {
+      .products-trending {
+        height: 250vh;
+        .header-text {
+          top: 10rem;
+          h1,
+          span {
+            font: {
+              size: 8rem;
+            }
+          }
+        }
+        .bottom-text {
+          margin-bottom: 10rem;
+          h1,
+          span {
+            font: {
+              size: 8rem;
+            }
+          }
+        }
+      }
+      .products-classify {
+        .classify-wraper {
+          & > * {
+            height: 30rem;
+          }
+        }
+      }
+      .custom-banner {
+        .custom-wraper {
+          .wraper-right {
+            .custom-item {
+              .custom-item-content {
+                .item-heading {
+                  span {
+                    font-size: 6rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .final-sale {
+        height: 50vh;
+        .final-sale-item {
+          &.right {
+            display: none;
+          }
+          span {
+            font-size: 6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #index-page {
+    #main {
+      .products-trending {
+        height: 200vh;
+      }
+      .final-sale {
+        height: 50vh;
+        .final-sale-item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*  */

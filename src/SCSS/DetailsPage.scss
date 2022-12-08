@@ -1,0 +1,323 @@
+@mixin flexVScenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin fullWidthAndHeight {
+  width: 100%;
+  height: 100%;
+}
+
+#details-page {
+  #header {
+    background-color: black;
+  }
+  .main {
+    padding-top: 15rem;
+    .product-details {
+      .product-gallery {
+        padding-right: 2rem;
+        .react-tabs {
+          .react-tabs__tab-panel {
+            img {
+              width: 100%;
+            }
+          }
+          .react-tabs__tab-list {
+            @include flexVScenter;
+            justify-content: space-between;
+            width: 100%;
+            .react-tabs__tab {
+              width: 30%;
+              margin-top: 1.6rem;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .product-content {
+        padding: 0 2rem;
+        .product-info {
+          text-align: center;
+          .title {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+          }
+          .product-categories {
+            margin-bottom: 1.6rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: #99a9b5;
+            @include flexVScenter;
+            justify-content: center;
+            span {
+              display: none;
+              padding-right: 1rem;
+              &:nth-child(2),
+              &:nth-child(3) {
+                display: block;
+              }
+            }
+          }
+          .product-rating {
+            margin-bottom: 1.6rem;
+            i {
+              font-size: 1.6rem;
+              padding: 0 0.4rem;
+            }
+          }
+          .product-price {
+            font-size: 2.8rem;
+            margin-bottom: 1.6rem;
+            span {
+              font-size: 2.8rem;
+            }
+          }
+          .product-short-description {
+            padding-bottom: 1.6rem;
+            p {
+              font-size: 1.6rem;
+            }
+          }
+        }
+        .product-attributes {
+          text-align: center;
+          .product-color {
+            padding-bottom: 1rem;
+            p {
+              font-size: 1.6rem;
+            }
+            span {
+              display: inline-block;
+              position: relative;
+              line-height: 2.6rem;
+              width: 2.6rem;
+              height: 2.6rem;
+              margin: 0 0.6rem;
+              border-radius: 50%;
+              &::after {
+                content: "";
+                position: absolute;
+                width: 3.2rem;
+                height: 3.2rem;
+                border-radius: 50%;
+                border: 1px solid black;
+                top: -0.3rem;
+                left: -0.3rem;
+              }
+            }
+          }
+          .product-size {
+            margin: 0.6rem 0.6rem 0 0;
+            padding: 0.4rem 0;
+            cursor: pointer;
+            span {
+              display: none;
+              margin: 0.3rem;
+              border: 0.05rem solid black;
+              padding: 0.6rem;
+              &:nth-child(1),
+              &:nth-child(2),
+              &:nth-child(3) {
+                display: inline-block;
+              }
+            }
+          }
+          .add-to-cart {
+            @include flexVScenter;
+            justify-content: center;
+            margin-top: 2rem;
+            .product-quantity {
+              @include flexVScenter;
+              justify-content: center;
+              display: flex;
+              padding: 0;
+              margin-right: 2rem;
+              max-width: 12rem;
+              float: none;
+              border: 0.1rem solid black;
+              border-radius: 0.3rem;
+              .minus,
+              .plus {
+                position: relative;
+                @include flexVScenter;
+                justify-content: center;
+                width: 4rem;
+                height: 3.8rem;
+                background-color: transparent;
+                font-size: 2rem;
+                line-height: 3.8rem;
+                border: none;
+              }
+              span {
+                font: {
+                  size: 1.6rem;
+                  weight: 700;
+                }
+              }
+            }
+            button {
+              position: relative;
+              @include flexVScenter;
+              justify-content: center;
+              background-color: transparent;
+              padding: 0.8rem 1.6rem;
+              font: {
+                size: 1.4rem;
+                weight: 700;
+              }
+              text-transform: uppercase;
+              border-radius: 0.3rem;
+            }
+          }
+        }
+        .product-description {
+          margin-top: 2.4rem;
+          .title {
+            font: {
+              size: 1.8rem;
+              weight: 700;
+            }
+          }
+          .content {
+            height: 20rem;
+            overflow-y: scroll;
+            padding-right: 2rem;
+            &::-webkit-scrollbar {
+              width: 0.6rem;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: #81c3f1;
+            }
+            &::-webkit-scrollbar-track {
+              -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+              background-color: #f5f5f5;
+            }
+            p {
+              font-size: 1.6rem;
+              text-align: justify;
+            }
+            .brand {
+              float: left;
+              &::after {
+                content: "";
+                clear: both;
+              }
+            }
+          }
+        }
+      }
+    }
+    .product-reviews {
+      padding-top: 6rem;
+      .reviews-wraper {
+        .comments-wraper {
+          margin-right: 2rem;
+          .title {
+            span {
+              font: {
+                size: 2.2rem;
+                weight: 700;
+              }
+              margin-right: 0.8rem;
+              &:first-child {
+                color: red;
+              }
+            }
+          }
+          .comments-main {
+            width: 100%;
+            .comment-element {
+              margin: 1.6rem 0;
+              .reviewer {
+                width: 100%;
+                @include flexVScenter;
+                img {
+                  height: 5rem;
+                  width: 5rem;
+                  border: 0.5rem solid black;
+                  border-radius: 50%;
+                }
+                .info{
+                  margin-left: 1.6rem;
+                  .name{
+                    font-size: 1.6rem;
+                  }
+                }
+              }
+              .content{
+                margin-top: .8rem;
+                .date{
+
+                }
+                .comment{
+                  font-size: 1.4rem;
+                }
+              }
+            }
+          }
+        }
+        .form-reviews {
+          margin-left: 2rem;
+          .title {
+            h1 {
+              font: {
+                size: 2.2rem;
+                weight: 700;
+              }
+            }
+          }
+          .form-wraper {
+            form {
+              p {
+                font-size: 1.6rem;
+                margin-bottom: 0.5rem;
+              }
+              .form-reviewer {
+                margin-bottom: 1.6rem;
+                input {
+                  width: 100%;
+                  background-color: transparent;
+                  border-radius: 0.3rem;
+                  padding: 1rem 1.5rem;
+                  max-height: 4rem;
+                  font-size: 1.6rem;
+                }
+              }
+              .form-rating {
+                margin-bottom: 1.6rem;
+                ul {
+                  @include flexVScenter;
+                  li {
+                    margin-right: 0.4rem;
+                    i {
+                      font-size: 1.6rem;
+                    }
+                  }
+                }
+              }
+              .form-comment {
+                textarea {
+                  width: 100%;
+                  padding: 1rem 1.5rem;
+                  font-size: 1.6rem;
+                }
+              }
+            }
+            .form-submit {
+              margin-bottom: 1.6rem;
+              text-transform: uppercase;
+              font-weight: 700;
+              padding: 1rem 1.6rem;
+              font-size: 1.4rem;
+              margin-top: 2.4rem;
+              border-radius: 0.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
